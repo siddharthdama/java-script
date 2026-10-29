@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>area calculator</title>
+</head>    
+<body>
+    <h1>Area Calculator</h1>
+    <script>
+        // JavaScript code for area calculation
+        var choice = prompt("you are welcomed to area calculator.\n please select your choice.\n1 area of rectangle\n2 area of triangle\n3 area of circle");
+        if (choice == '1') {
+            var l = prompt('enter the length');
+            var b = prompt('enter the breadth');
+            var result = Number(l) * Number(b);
+        }
+        if (choice == '2') {
+            var b = prompt('enter the base');
+            var h = prompt('enter the height');
+            var result = 0.5 * Number(b) * Number(h);
+            alert('the area is ' + result);
+        }
+        if (choice == '3') {
+            var r = prompt('enter the radius');
+            var result = 3.14 * Number(r) * Number(r);
+            alert('the area is ' + result);
+        }
+        if(choice == '4') {
+            var h = prompt('enter the height');
+            var cb = prompt('enter the corresponding base');
+            var result = Number(h) * Number(cb);
+            alert('the area is ' + result);
+        }
