@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 10px;
+    background: #e9ecef;
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+    </style>
+</head>
+<body>
+    <script>
+        // Get references to the form and input elements
+        const myForm = document.getElementById("myForm");
+        const myInput = document.getElementById("myInput");
+        const myItem = document.getElementById("myItem");
+
+        // Add an event listener to the form for the submit event
+        myForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            const inputItems = myInput.value.trim(); // Get the input value and trim whitespace
+            if (inputItems) { // Check if the input is not empty
+                createItem(inputItems); // Call the function to create a new item
+                myInput.value = ""; // Clear the input field
+            }
+        });
+
+// Create a function for adding the shopping items entered into the list
+function createItem(inputItems) {
+    var items = `<li>${inputItems}</li>`;
+    myItem.insertAdjacentHTML("beforeend", items);
+}
+    </script>
+    <div class="container">
+        <h2>My Shopping List</h2>
+        <form id="myForm">
+            <input type="text" id="myInput" placeholder="Enter shopping item..." required>
+            <button type="submit">Add</button>
+        </form>
+     <ul id="myItem"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
